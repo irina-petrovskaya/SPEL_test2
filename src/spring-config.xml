@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="foo" class="a.b.c.Foo" p:p1="#{a0.aaas.?[bbbs.size()>0].size()}"/>
+    <bean id="b11" class="a.b.c.BBB" p:ccc="18"/>
+        <bean id="b12" class="a.b.c.BBB" p:ccc="16"/>
+        <bean id="b13" class="a.b.c.BBB" p:ccc="21"/>
+        <bean id="b14" class="a.b.c.BBB" p:ccc="15"/>
+        <bean id="a11" class="a.b.c.AAA" p:bbbs="#{{@b11, @b12}}"/>
+        <bean id="a12" class="a.b.c.AAA" p:bbbs="#{{@b13, @b14}}"/>
+    <bean id="a0" class="a.b.c.A0" p:aaas="#{{@a11,@a12}}"/>
+</beans>
